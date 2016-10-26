@@ -1,0 +1,189 @@
+#app{
+     height: 659px;
+}
+
+.LeftCol{
+
+	width: 25%;
+    display: inline-block;
+}
+
+.TopBar{
+	background-color: #DDD;
+}
+
+.TopBar input {
+
+	width: 100%;
+    height: 50px;
+    background-image: url("../images/ic_search_black_24px.svg");
+    background-size: 22px 163px;
+    background-repeat: no-repeat;
+    background-position: 3% 50%;
+}
+
+
+
+.TopBar ::-webkit-input-placeholder { 
+
+        padding-left: 40px;
+
+ }
+ 
+
+.header{
+	height: 60px;
+}
+
+.TopBar #userid{
+
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    float: left;
+    margin-top: 9px;
+    margin-left: 9px;
+    vertical-align: middle;
+}
+
+.TopBar #three_dots{
+    float: right;
+    width: 23px;
+    height: 28px;
+    vertical-align: middle;
+    margin-top: 11px;
+}
+
+.TopBar #chatbox{
+
+    float: right;
+    width: 24px;
+    height: 25px;
+    vertical-align: middle;
+    margin-top: 13px;
+    margin-right: 5px;
+}
+
+
+.UserList{
+    height: 227px;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+
+
+.UserTile{
+	position: relative;
+    height: 70px;
+
+}
+
+.UserTile img{
+    border-radius: 50%;
+    width: 49px;
+    height: 49px;
+    margin-left: 5px;
+    margin-top: 11px;
+
+}
+
+.UserName{
+display: inline-block;
+font-weight: 500;
+
+}
+.LastSeen{
+	display: inline-block;
+    position: absolute;
+    right: 5px;
+    top: 18px;
+    color: #BEBDBB;
+}
+
+
+.RtCol{
+    width:75%;
+    display: inline-block;
+    vertical-align: top;
+
+}
+
+.RtTopbar{
+    width:100%;
+    height:60px;
+    background-color: #dddddd;
+
+}
+
+#Current_user{
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    float: left;
+    margin-top: 9px;
+    margin-left: 9px;
+    vertical-align: middle;
+}
+
+#Rt_threeDots{
+
+    float: right;
+    width: 23px;
+    height: 28px;
+    vertical-align: middle;
+    margin-top: 11px;
+}
+
+#attachClip{
+
+    float: right;
+    width: 23px;
+    height: 28px;
+    vertical-align: middle;
+    margin-top: 11px;
+
+
+}
+
+.chat_input{
+    position: relative;
+    width: 100%;
+    height: 60px;
+    background-color:#DDDDDC;
+}
+
+
+#emoticon {
+    width: 23px;
+    height: 28px;
+    vertical-align: middle;
+    margin-top: 11px;
+    margin-left: 2%;
+}
+
+.chat_input input
+{   
+    position: absolute;
+    height: 28px;
+    left: 13%;
+    top: 14px;
+    width: 75%;
+
+
+}
+
+#mic {
+    width: 23px;
+    height: 28px;
+    margin-top: 11px;
+    float: right;
+    margin-right: 2%;
+}
+
+
+.chatList{
+    height: 220px;
+    background-color:#DAD3CD;
+}
+

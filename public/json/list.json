@@ -1,0 +1,89 @@
+
+{
+
+
+
+			"User_info":[	
+
+				{
+					 "id":"01",
+					 "img":"../images/sreenath.jpg",
+					 "lastSeen":"5:00",
+					 "name":"Sreenath",
+					 "chat_list":[
+					 	"cgdsagug",
+					 	"csAKJCSJDSC",
+					 	"SDJVGHDSJVJJS",
+					 	"DKJCADSJCBDJB"
+					 ]
+					 
+					
+				},
+
+				{
+					 "id":"02",
+					 "img":"../images/sabir.jpg",
+					 "lastSeen":"Yesterday",
+					 "name":"Sabir",
+					 "chat_list":[
+					 	"cgdsagug",
+					 	"csAKJCSJDSC",
+					 	"SDJVGHDSJVJJS",
+					 	"DKJCADSJCBDJB"
+					 ]
+					 
+					
+				},
+
+				{
+					 "id":"03",
+					 "img":"../images/finnidy.jpg",
+					 "lastSeen":"Yesterday",
+					 "name":"Finnidy",
+					 "chat_list":[
+					 	"cgdsagug",
+					 	"csAKJCSJDSC",
+					 	"SDJVGHDSJVJJS",
+					 	"DKJCADSJCBDJB"
+					 ]
+					 
+					
+				},
+
+
+				{
+					 "id":"04",
+					 "img":"../images/finnidy.jpg",
+					 "lastSeen":"Yesterday",
+					 "name":"Richard",
+					 "chat_list":[
+					 	"cgdsagug",
+					 	"csAKJCSJDSC",
+					 	"SDJVGHDSJVJJS",
+					 	"DKJCADSJCBDJB"
+					 ]
+					 
+					
+				},
+				{
+					 "id":"05",
+					 "img":"../images/finnidy.jpg",
+					 "lastSeen":"9:15",
+					 "name":"Ambani",
+					 "chat_list":[
+					 	"cgdsagug",
+					 	"csAKJCSJDSC",
+					 	"SDJVGHDSJVJJS",
+					 	"DKJCADSJCBDJB"
+					 ]
+					 
+					
+				}
+
+
+
+
+		
+]
+				
+}
