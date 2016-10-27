@@ -1,13 +1,12 @@
 language: node_js
 node_js:
-  - "0.10"
+
   - "6"
   - "6.1"
   - "5.11"
-  - "0.6"
-  - "iojs"
+
+
+script: eslint
 
 
 
-
-  
