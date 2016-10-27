@@ -13,7 +13,7 @@ render(){
 return(
 
 
-	<div className="UserTile" onClick = {  ()=>{this.props.selectEvent(this.props.name)}} ref ="username">
+	<div className="UserTile" onClick = {  ()=>{this.props.selectEvent(this.props.image,this.props.name,this.props.chat)}} ref ="username">
 
 	
 		<img alt="Bacon..." src={this.props.image} className="images"></img>

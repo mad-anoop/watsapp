@@ -4,6 +4,7 @@ import $ from 'jquery';
 import LeftCol from './LeftCol.jsx';
 import RightCol from './RtCol.jsx';
 
+const array=[];
 export default class Main extends React.Component {
 
 
@@ -11,17 +12,25 @@ export default class Main extends React.Component {
 
 constructor(){
 super();
-	this.state= ({data:[],loading:false,current:"anoop"});
-	
+	this.state= ({data:[],loading:false,currentdp:"../images/anoop.jpg",currentname:"Anoop",chat:[],currentchat:[]});	
 }
 
-selectEvent(add){
+selectEvent(dp,name,chat){
+this.chat=chat;
+this.setState({currentdp:dp, currentname:name,currentchat:chat});
 
-console.log(add);
-this.setState({current:add});
+}
+
+readChange(value){
+
+array.push(value);
+console.log(array);
+this.setState({chat:array});
 console.log(this.state);
-
 }
+
+
+
 
 
 
@@ -56,7 +65,7 @@ if(this.state.loading){
 
         return ( 	< div className = "Main" >
             				< LeftCol data = {this.state.data.User_info } selectEvent = {this.selectEvent.bind(this)} />
-            				< RightCol data ={ this.state.data.User_info} />
+            				< RightCol  currentdp = { this.state.currentdp} currentname={this.state.currentname} readChange={this.readChange.bind(this)} chat={this.state.chat} currentchat={this.state.currentchat} />
            		    < /div>
         );
 

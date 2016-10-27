@@ -25,7 +25,7 @@ generateLayout(){
 const data = this.props.data;
 var layout = data.map((item, i)=>{
 
-	return < UserTile name={item.name} lastseen={item.lastSeen} image={item.img} selectEvent ={this.props.selectEvent}/>
+	return < UserTile name={item.name} lastseen={item.lastSeen} image={item.img} chat={item.chat_list} selectEvent ={this.props.selectEvent}/>
 		  
 	
 })

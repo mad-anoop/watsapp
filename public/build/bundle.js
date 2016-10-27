@@ -80,6 +80,8 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+	var array = [];
+
 	var Main = function (_React$Component) {
 	  _inherits(Main, _React$Component);
 
@@ -88,17 +90,23 @@
 
 	    var _this = _possibleConstructorReturn(this, (Main.__proto__ || Object.getPrototypeOf(Main)).call(this));
 
-	    _this.state = { data: [], loading: false, current: "anoop" };
-
+	    _this.state = { data: [], loading: false, currentdp: "../images/anoop.jpg", currentname: "Anoop", chat: [], currentchat: [] };
 	    return _this;
 	  }
 
 	  _createClass(Main, [{
 	    key: 'selectEvent',
-	    value: function selectEvent(add) {
+	    value: function selectEvent(dp, name, chat) {
+	      this.chat = chat;
+	      this.setState({ currentdp: dp, currentname: name, currentchat: chat });
+	    }
+	  }, {
+	    key: 'readChange',
+	    value: function readChange(value) {
 
-	      console.log(add);
-	      this.setState({ current: add });
+	      array.push(value);
+	      console.log(array);
+	      this.setState({ chat: array });
 	      console.log(this.state);
 	    }
 	  }, {
@@ -132,7 +140,7 @@
 	          'div',
 	          { className: 'Main' },
 	          _react2.default.createElement(_LeftCol2.default, { data: this.state.data.User_info, selectEvent: this.selectEvent.bind(this) }),
-	          _react2.default.createElement(_RtCol2.default, { data: this.state.data.User_info })
+	          _react2.default.createElement(_RtCol2.default, { currentdp: this.state.currentdp, currentname: this.state.currentname, readChange: this.readChange.bind(this), chat: this.state.chat, currentchat: this.state.currentchat })
 	        );
 	      }
 	    }
@@ -33096,7 +33104,7 @@
 	      var data = this.props.data;
 	      var layout = data.map(function (item, i) {
 
-	        return _react2.default.createElement(_UserTile2.default, { name: item.name, lastseen: item.lastSeen, image: item.img, selectEvent: _this2.props.selectEvent });
+	        return _react2.default.createElement(_UserTile2.default, { name: item.name, lastseen: item.lastSeen, image: item.img, chat: item.chat_list, selectEvent: _this2.props.selectEvent });
 	      });
 	      return layout;
 	    }
@@ -33166,7 +33174,7 @@
 				return _react2.default.createElement(
 					'div',
 					{ className: 'UserTile', onClick: function onClick() {
-							_this2.props.selectEvent(_this2.props.name);
+							_this2.props.selectEvent(_this2.props.image, _this2.props.name, _this2.props.chat);
 						}, ref: 'username' },
 					_react2.default.createElement('img', { alt: 'Bacon...', src: this.props.image, className: 'images' }),
 					_react2.default.createElement(
@@ -33313,9 +33321,9 @@
 				return _react2.default.createElement(
 					'div',
 					{ className: 'RtCol' },
-					_react2.default.createElement(_RtTopbar2.default, null),
-					_react2.default.createElement(_RtChatlist2.default, null),
-					_react2.default.createElement(_ChatInput2.default, null)
+					_react2.default.createElement(_RtTopbar2.default, { currentdp: this.props.currentdp, currentname: this.props.currentname }),
+					_react2.default.createElement(_RtChatlist2.default, { chat: this.props.chat, currentchat: this.props.currentchat }),
+					_react2.default.createElement(_ChatInput2.default, { readChange: this.props.readChange })
 				);
 			}
 		}]);
@@ -33373,7 +33381,12 @@
 										return _react2.default.createElement(
 													'div',
 													{ className: 'RtTopbar' },
-													_react2.default.createElement('img', { id: 'Current_user', src: '../images/finnidy.jpg' }),
+													_react2.default.createElement('img', { id: 'Current_user', src: this.props.currentdp }),
+													_react2.default.createElement(
+																'span',
+																{ id: 'curr_name' },
+																this.props.currentname
+													),
 													_react2.default.createElement('img', { id: 'Rt_threeDots', src: '../images/ic_more_vert_black_24dp_2x.png' }),
 													_react2.default.createElement('img', { id: 'attachClip', src: '../images/ic_attach_file_black_24px.svg' })
 										);
@@ -33392,7 +33405,7 @@
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
-			value: true
+		value: true
 	});
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -33418,23 +33431,43 @@
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 	var _class = function (_React$Component) {
-			_inherits(_class, _React$Component);
+		_inherits(_class, _React$Component);
 
-			function _class() {
-					_classCallCheck(this, _class);
+		function _class() {
+			_classCallCheck(this, _class);
 
-					return _possibleConstructorReturn(this, (_class.__proto__ || Object.getPrototypeOf(_class)).apply(this, arguments));
+			return _possibleConstructorReturn(this, (_class.__proto__ || Object.getPrototypeOf(_class)).call(this));
+		}
+
+		_createClass(_class, [{
+			key: 'generateLayout',
+			value: function generateLayout() {
+				var data = this.props.currentchat;
+				var layout = data.map(function (item, i) {
+
+					return _react2.default.createElement(
+						'div',
+						{ className: 'chip', key: i },
+						' ',
+						item,
+						' '
+					);
+				});
+				return layout;
 			}
+		}, {
+			key: 'render',
+			value: function render() {
 
-			_createClass(_class, [{
-					key: 'render',
-					value: function render() {
+				return _react2.default.createElement(
+					'div',
+					{ className: 'chatList' },
+					this.generateLayout()
+				);
+			}
+		}]);
 
-							return _react2.default.createElement('div', { className: 'chatList' });
-					}
-			}]);
-
-			return _class;
+		return _class;
 	}(_react2.default.Component);
 
 	exports.default = _class;
@@ -33474,21 +33507,36 @@
 	var _class = function (_React$Component) {
 		_inherits(_class, _React$Component);
 
-		function _class() {
+		function _class(props) {
 			_classCallCheck(this, _class);
 
-			return _possibleConstructorReturn(this, (_class.__proto__ || Object.getPrototypeOf(_class)).apply(this, arguments));
+			var _this = _possibleConstructorReturn(this, (_class.__proto__ || Object.getPrototypeOf(_class)).call(this, props));
+
+			_this.node = undefined;
+			_this.inputChange = _this.inputChange.bind(_this);
+			return _this;
 		}
 
 		_createClass(_class, [{
+			key: 'inputChange',
+			value: function inputChange(e) {
+				if (e.keyCode === 13) {
+
+					this.props.readChange(this.node.value);
+				}
+			}
+		}, {
 			key: 'render',
 			value: function render() {
+				var _this2 = this;
 
 				return _react2.default.createElement(
 					'div',
 					{ className: 'chat_input' },
 					_react2.default.createElement('img', { id: 'emoticon', src: '../images/ic_insert_emoticon_black_24dp_2x.png' }),
-					_react2.default.createElement('input', { type: 'text' }),
+					_react2.default.createElement('input', { type: 'text', ref: function ref(node) {
+							return _this2.node = node;
+						}, onKeyDown: this.inputChange }),
 					_react2.default.createElement('img', { id: 'mic', src: '../images/ic_settings_voice_black_24dp_2x.png' })
 				);
 			}

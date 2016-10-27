@@ -14,9 +14,9 @@ render(){
 return(
 
 	<div className="RtCol">
-		< RtTopbar  />
-		< ChatList  />
-		< ChatInput />
+		< RtTopbar currentdp ={ this.props.currentdp} currentname ={ this.props.currentname} />
+		< ChatList chat = {this.props.chat} currentchat = {this.props.currentchat} />
+		< ChatInput  readChange = {this.props.readChange}/>
 	</div>	
 
 	);
