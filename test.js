@@ -1,5 +1,5 @@
 describe("Test Suite", function() {
     it("test spec", function() {
-        expect( 1+4 ).toEqual(5);
+        expect( 1+6 ).toEqual(7);
     }); 
 });
